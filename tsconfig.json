@@ -10,8 +10,10 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true
   },
-  "include": ["src/**/*", "webpack.config.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*", "webpack.config.ts", "config/**/*"],
+  "exclude": ["node_modules", "dist", "build"]
 }
