@@ -1,10 +1,10 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router";
-import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 import { Suspense } from "react";
-import { ThemeProvider } from "./theme/ThemeProvider";
+import { ThemeProvider } from "app/providers/ThemeProvider";
+import { AboutPage } from "pages/AboutPage";
+import { MainPage } from "pages/MainPage";
 
 const root = document.getElementById("root");
 
@@ -15,12 +15,12 @@ ReactDOM.createRoot(root!).render(
             <Route path="/" element={<App />}>
                 <Route index element={
                     <Suspense fallback={<div>loading...</div>}>
-                        <MainPageAsync />
+                        <MainPage />
                     </Suspense>
                 } />
                 <Route path="/about" element={
                     <Suspense fallback={<div>loading...</div>}>
-                        <AboutPageAsync />
+                        <AboutPage />
                     </Suspense>
                 } />
             </Route>

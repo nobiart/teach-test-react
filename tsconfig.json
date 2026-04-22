@@ -12,7 +12,10 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": true,
-    "rewriteRelativeImportExtensions": true
+    "rewriteRelativeImportExtensions": true,
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
   "include": ["src/**/*", "webpack.config.ts", "config/**/*"],
   "exclude": ["node_modules", "dist", "build"]

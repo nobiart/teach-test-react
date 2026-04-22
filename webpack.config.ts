@@ -9,9 +9,10 @@ const __dirname = path.dirname(__filename);
 
 export default (env: BuildEnv) => {
   const paths: BuildPaths = {
-    entry: path.resolve(__dirname, 'src', 'index.tsx'),
+    entry: path.resolve(__dirname, 'src/app', 'index.tsx'),
     build: path.resolve(__dirname, 'dist'),
     html: path.resolve(__dirname, 'public', 'index.html'),
+    src: path.resolve(__dirname, 'src'),
   }
 
   const mode = env.mode || "development";
