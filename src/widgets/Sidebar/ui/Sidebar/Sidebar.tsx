@@ -1,0 +1,25 @@
+import { useState } from "react";
+import cls from "./Sidebar.module.scss";
+import { classNames } from "shared/lib/classNames/classNames";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
+
+interface SidebarProps {
+    className?: string;
+}
+
+export const Sidebar = ({ className = "" }: SidebarProps) => {
+    const [collapsed, setCollapsed] = useState(false);
+
+    const handleToggle = () => {
+        setCollapsed(prev => !prev);
+    }
+
+    return (
+        <div className={classNames(cls.sidebar, {[cls.collapsed]: collapsed}, [className])}>
+            <button onClick={handleToggle}>Toggle</button>
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+            </div>
+        </div>
+    );
+};
