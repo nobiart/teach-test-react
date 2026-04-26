@@ -6,19 +6,18 @@ import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { Suspense } from "react";
 
-
 export default function App() {
-    const {theme} = useTheme();
+  const { theme } = useTheme();
 
-    return (
-        <div className={classNames("app", {}, [theme])}>
-            <Suspense fallback="Loading...">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    <AppRouter />
-                </div>
-            </Suspense>
+  return (
+    <div className={classNames("app", {}, [theme])}>
+      <Suspense fallback="Loading...">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
         </div>
-    )
+      </Suspense>
+    </div>
+  );
 }

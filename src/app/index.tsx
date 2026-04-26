@@ -8,9 +8,9 @@ import "shared/config/i18n/i18n";
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root!).render(
- <BrowserRouter>
+  <BrowserRouter>
     <ThemeProvider>
-        <App />
+      <App />
     </ThemeProvider>
- </BrowserRouter>
-)
+  </BrowserRouter>,
+);

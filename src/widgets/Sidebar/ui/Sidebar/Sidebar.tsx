@@ -5,23 +5,27 @@ import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import { LangSwitcher } from "shared/ui/LangSwitcher";
 
 interface SidebarProps {
-    className?: string;
+  className?: string;
 }
 
 export const Sidebar = ({ className = "" }: SidebarProps) => {
-    const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
-    const handleToggle = () => {
-        setCollapsed(prev => !prev);
-    }
+  const handleToggle = () => {
+    setCollapsed((prev) => !prev);
+  };
 
-    return (
-        <div className={classNames(cls.sidebar, {[cls.collapsed]: collapsed}, [className])}>
-            <button onClick={handleToggle}>Toggle</button>
-            <div className={cls.switchers}>
-                <ThemeSwitcher />
-                <LangSwitcher />
-            </div>
-        </div>
-    );
+  return (
+    <div
+      className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+        className,
+      ])}
+    >
+      <button onClick={handleToggle}>Toggle</button>
+      <div className={cls.switchers}>
+        <ThemeSwitcher />
+        <LangSwitcher />
+      </div>
+    </div>
+  );
 };
