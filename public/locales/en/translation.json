@@ -2,5 +2,6 @@
     "testExample": "Test Example",
     "language": "EN",
     "translate": "Translate",
-    "mainPage": "Main Page"
+    "mainPage": "Main Page",
+    "notFoundPage": "Page not found"
 }
