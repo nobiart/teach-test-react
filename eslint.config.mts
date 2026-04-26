@@ -3,16 +3,18 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import { defineConfig } from "eslint/config";
+// import i18next from "eslint-plugin-i18next";
 
 export default defineConfig([
-  { 
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], 
-    plugins: { js, pluginReact }, 
-    extends: ["js/recommended"], 
-    languageOptions: { globals: globals.browser } 
+  {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    plugins: { js, pluginReact },
+    extends: ["js/recommended"],
+    languageOptions: { globals: globals.browser },
   },
   tseslint.configs.recommended,
-  pluginReact.configs.flat['jsx-runtime'],
+  pluginReact.configs.flat["jsx-runtime"],
+  // i18next.configs["flat/recommended"],
   {
     linterOptions: {
       reportUnusedInlineConfigs: "error",
@@ -23,9 +25,9 @@ export default defineConfig([
       "no-unused-vars": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
       indent: [2, 2],
-    }
+    },
   },
   {
-    ignores: ['dist', 'node_modules', '.vscode', '.idea', 'eslint.config.mts'],
+    ignores: ["dist", "node_modules", ".vscode", ".idea", "eslint.config.mts"],
   },
 ]);
